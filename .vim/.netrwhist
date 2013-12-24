@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/amd/work/scope21/TMP_hara/MN2_500/work.mn2train.101105/amtools-1.6.5dev/set.20101105-172639/lab/parm'
+let g:netrw_dirhist_2='/amd/work/baritone2/speech/hara/.ssh'
+let g:netrw_dirhist_3='/opt/itakemaru/XimeraHTS/xdata/settings'
+let g:netrw_dirhist_4='/opt/itakemaru/tankred'
+let g:netrw_dirhist_5='/opt/itakemaru/tankred/config'
+let g:netrw_dirhist_6='/opt/itakemaru/tankred/config/environments'
