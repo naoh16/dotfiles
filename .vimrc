@@ -1,6 +1,6 @@
 " An example for a vimrc file.
 "
-" Last Modified: 2013/07/10 16:02:10.
+" Last Modified: 2014/05/14 19:29:33.
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -274,4 +274,19 @@ set t_kb=
 " Enable matchit
 " 対応する括弧に移動するコマンド「%」を拡張するマクロ
 source $VIMRUNTIME/macros/matchit.vim
+
+" Install NeoBundle
+" git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+set nocompatible
+if has('vim_starting')
+	set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" auto syntax check
+NeoBundle 'scrooloose/syntastic'
+
+filetype plugin indent on
+syntax on
+NeoBundleCheck
 
