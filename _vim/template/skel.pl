@@ -2,15 +2,16 @@
 #
 #
 #
-#   Copyright (C) 2013 Sunao HARA (hara@cs.okayama-u.ac.jp)
-#   Copyright (C) 2013 Abe Laboratory, Okayama Univresity
-#   Last Modified: 2013/07/10 16:05:34.
+#   Copyright (C) 2014 Sunao HARA (hara@okayama-u.ac.jp)
+#   Copyright (C) 2014 Abe Laboratory, Okayama Univresity
+#   Last Modified: 2014/07/11 11:22:25.
 #
 ##
 ## 定番のおまじない
 ##
 use strict;
 use warnings;
+use 5.10.1;
 #use Data::Dumper;        # print Dumper(\@data);
 #use Text::CSV::Simple;   # $p = Text::CSV::Simple->new({binary=>1}); @d = $p->read_file($filename);
 #use Text::CSV_XS;        # $csv = Text::CSV_XS->new({binary=>1}); while($row = $csv->getline(IN));
