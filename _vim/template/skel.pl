@@ -2,16 +2,19 @@
 #
 #
 #
-#   Copyright (C) 2013 Sunao HARA (hara@cs.okayama-u.ac.jp)
-#   Copyright (C) 2013 Abe Laboratory, Okayama Univresity
-#   Last Modified: 2013/07/10 16:05:34.
+#   Copyright (C) 2014 Sunao HARA (hara@cs.okayama-u.ac.jp)
+#   Copyright (C) 2014 Abe Laboratory, Okayama Univresity
+#   Last Modified: 2014/07/11 11:36:05.
 #
 ##
-## ���֤Τ��ޤ��ʤ�
+## 定番のおまじない
 ##
 use strict;
+use Data::Dumper; { package Data::Dumper; sub qquote { return shift; } } $Data::Dumper::Useperl = 1;
 use warnings;
-#use Data::Dumper;        # print Dumper(\@data);
+use 5.10.0;
+
+# Usage of Data::Dumper; print Dumper(\@data);
 #use Text::CSV::Simple;   # $p = Text::CSV::Simple->new({binary=>1}); @d = $p->read_file($filename);
 #use Text::CSV_XS;        # $csv = Text::CSV_XS->new({binary=>1}); while($row = $csv->getline(IN));
 #use Encode;              # Memo: euc->sjis; Encode::from_to($hoge, "ujis", "sjis");
@@ -21,16 +24,16 @@ use warnings;
 #use open IO => ":encoding(euc-jp)";
 
 ##
-## ������λ �ȥ�å�
+## 強制終了 トラップ
 ##
 $SIG{'INT'}=$SIG{'HUP'}=$SIG{'QUIT'}=$SIG{'TERM'}=sub { print "SIGINT!!\n"; exit; };
 
 ##
-## ����
+## 設定
 ##
 
 ##
-## �ܽ���
+## 本処理
 ##
 while(<>) {
 
