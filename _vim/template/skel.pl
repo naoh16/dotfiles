@@ -2,9 +2,9 @@
 #
 #
 #
-#   Copyright (C) 2014 Sunao HARA (hara@cs.okayama-u.ac.jp)
+#   Copyright (C) 2014 Sunao HARA (hara@okayama-u.ac.jp)
 #   Copyright (C) 2014 Abe Laboratory, Okayama Univresity
-#   Last Modified: 2014/07/11 11:36:05.
+#   Last Modified: 2014/07/11 11:38:18.
 #
 ##
 ## 定番のおまじない
