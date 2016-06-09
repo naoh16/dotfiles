@@ -1,6 +1,6 @@
 " An example for a vimrc file.
 "
-" Last Modified: 2014/05/14 19:29:33.
+" Last Modified: 2016/03/20 14:31:48.
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -179,6 +179,11 @@ autocmd FileType php set dictionary+=$VIMRUNTIME/syntax/php.vim
 autocmd FileType perl set dictionary+=$VIMRUNTIME/syntax/perl.vim
 autocmd FileType java set dictionary+=$VIMRUNTIME/syntax/java.vim
 
+" for Python
+autocmd FileType python setl autoindent
+autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
 " 日付挿入マクロ (Last Modified: .)
 source ~/_vim/plugin/autodate.vim
 let autodate_format = '%Y/%m/%d %H:%M:%S'
@@ -222,27 +227,28 @@ augroup END
 " （編集中のファイル名が常に確認できるようになる）
 set laststatus=2
 
-" バッファの移動
-" F2: 前のバッファ
-" F3: 次のバッファ
-" F4: バッファ削除
-
-set <F2>=[12~
-set <F3>=[13~
-set <F4>=[14~
-" set <F5>=[15~
-" set <F6>=[17~
-
-map <F2> <ESC>:bp<CR>
-map <F3> <ESC>:bn<CR>
-map <F4> <ESC>:bw<CR>
-
-" タブエディタ風の管理
-source ~/_vim/plugin/buftabs.vim
-let g:buftabs_only_basename=1
-let g:buftabs_in_statusline=1
-map <C-h> :bprev<CR>
-map <C-l> :bnext<CR>
+"" バッファの移動
+"" F2: 前のバッファ
+"" F3: 次のバッファ
+"" F4: バッファ削除
+"
+"set <F2>=[12~
+"set <F3>=[13~
+"set <F4>=[14~
+"" set <F5>=[15~
+"" set <F6>=[17~
+"
+"map <F2> <ESC>:bp<CR>
+"map <F3> <ESC>:bn<CR>
+"map <F4> <ESC>:bw<CR>
+"
+"" タブ管理
+nnoremap  gn  :tabnew<CR>
+nnoremap  gg  :tabNext<CR>
+" Original
+" :tabnew  == none
+" :tabNext == gt
+" :tabPrev == gT
 
 " コンパイラ指定
 autocmd FileType perl compiler perl
@@ -285,6 +291,10 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 
 " auto syntax check
 NeoBundle 'scrooloose/syntastic'
+" Comment Any Ware
+NeoBundle 'tyru/caw.vim.git'
+nmap <C-T> <Plug>(caw:tildepos:toggle)
+vmap <C-T> <Plug>(caw:tildepos:toggle)
 
 filetype plugin indent on
 syntax on
